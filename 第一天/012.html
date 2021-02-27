@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      position: relative;
+      width: 400px;
+      border-bottom: 1px solid #ccc;
+      margin: 100px auto;
+    }
+
+    .box input {
+      width: 370px;
+      height: 30px;
+      border: 0;
+      outline: none;
+    }
+
+    .box img {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      width: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <label for="">
+      <img src="images/close.png" alt="" id="eye">
+    </label>
+    <input type="password" name="" id="pwd">
+  </div>
+  <script>
+    //通过点击事件，来改变表单的type值
+    var eye = document.querySelector('#eye');
+    var pwd = document.querySelector('#pwd');
+    eye.onclick = function () {
+      if (pwd.type == 'password') {
+        pwd.type = 'text';
+        eye.src = 'images/open.png';
+      } else {
+        pwd.type = 'password';
+        eye.src = 'imagers/close.png';
+      }
+    }
+  </script>
+</body>
+
+</html>

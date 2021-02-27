@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div,
+    p {
+      width: 300px;
+      height: 30px;
+      line-height: 30px;
+      color: #fff;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <button>显示当前系统时间</button>
+  <div>某个时间</div>
+
+  <script>
+    //当点击按钮的时候获取当前的时间，将当前的时候显示到div中
+    //事件三要素，事件源，事件类型，事件处理程序
+    var btn = document.querySelector('button');
+    var div = document.querySelector('div');
+    btn.addEventListener('click', function () {
+      div.innerHTML = getDate();
+    });
+
+    function getDate() {
+      var date = new Date();
+      console.log(date);
+      var year = date.getFullYear();
+      console.log(year);
+      var month = date.getMonth();
+      console.log(month);
+      //获取当前日
+      var day = date.getDate();
+      console.log(day);
+      //获取当前星期
+      var xq = date.getDay()
+      console.log(xq);
+      var hour = date.getHours();
+      console.log(hour);
+      var minutes = date.getMinutes();
+      console.log(minutes);
+      var seconds = date.getSeconds();
+      console.log(seconds);
+      var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+      var time = year + '年' + (month + 1) + '月' + day + '日' + hour + '时' + minutes + '分' + seconds + '秒' + arr[xq];
+      // div.innerHTML = time;
+      return time;
+    }
+  </script>
+</body>
+
+</html>
