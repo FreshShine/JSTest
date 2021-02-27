@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <button>按钮4</button>
+  <button>按钮5</button>
+  <script>
+    //依次循环遍历按钮，给按钮添加粉色背景，同时把其他按钮的背景去去掉
+    var btns = document.querySelectorAll('button');
+    console.log(btns);
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].onclick = function () {
+        for (var i = 0; i < btns.length; i++) {
+          console.log(btns[i]);
+          btns[i].style.backgroundColor = '';
+        }
+        this.style.backgroundColor = 'pink';
+
+      }
+    }
+  </script>
+</body>
+
+</html>
