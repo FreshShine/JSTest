@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  手机号： <input type="number"><button>发送</button>
+  <script>
+    //点击发送之后，按钮变灰，倒计时3秒，3秒过后按钮可以重新点击
+    var btn = document.querySelector('button');
+    var timer = 5;
+    btn.addEventListener('click', function () {
+      btn.disabled = true;
+      setInterval(function () {
+        if (timer == 0) {
+          btn.disabled = false;
+          btn.innerHTML = '发送'
+        } else {
+          btn.innerHTML = "倒计时" + timer;
+          timer--;
+        }
+
+      }, 1000)
+    })
+  </script>
+</body>
+
+</html>

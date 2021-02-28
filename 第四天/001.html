@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // document.addEventListener('keyup', function () {
+    //   console.log('Keyup');
+    // })
+
+    // document.addEventListener('keydown', function () {
+    //   console.log('按下');
+    // })
+
+    // document.addEventListener('keypress', function () {
+    //   console.log('keyPress,不能识别功能键');
+    // })
+    document.onkeydown = function () {
+      console.log('按下了键盘');
+    }
+    document.onkeypress = function () {
+      console.log('keypress');
+    }
+    document.onkeyup = function () {
+      console.log('抬起了键盘');
+    }
+  </script>
+
+</body>
+
+</html>
