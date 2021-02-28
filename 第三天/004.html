@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    table {
+      width: 500px;
+      margin: 100px auto;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    td,
+    th {
+      border: 1px solid #333;
+    }
+
+    thead tr {
+      height: 40px;
+      background-color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <table cellspacing="0">
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>科目</th>
+        <th>成绩</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+  <script>
+    //首先创建数据
+    var data = [{
+        name: '张三',
+        subject: 'js',
+        score: 100
+
+      },
+      {
+        name: '李四',
+        subject: 'js',
+        score: 80
+
+      },
+      {
+        name: '王二',
+        subject: 'js',
+        score: 70
+
+      }, {
+        name: '找五',
+        subject: 'js',
+        score: 60
+
+      }
+    ];
+    //创建行
+    // 遍历数据，创建行
+    var tbody = document.querySelector('tbody');
+    for (var i = 0; i < data.length; i++) {
+      var tr = document.createElement('tr');
+      tbody.appendChild(tr);
+      //创建单元格
+      for (var k in data[i]) {
+        var td = document.createElement('td');
+        td.innerHTML = data[i][k];
+        tr.appendChild(td);
+      }
+
+      var td = document.createElement('td');
+      td.innerHTML = '<a href="javascript:;">删除</a>';
+      tr.appendChild(td);
+    }
+
+    var as = document.querySelectorAll('a');
+    for (var i = 0; i < as.length; i++) {
+      //点击a删除
+      as[i].onclick = function () {
+        console.log('删除');
+        tbody.removeChild(this.parentNode.parentNode);
+      }
+    }
+  </script>
+</body>
+
+</html>
