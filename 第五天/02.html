@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .son {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="son" style="width:200px;"></div>
+  <script>
+    var son = document.querySelector('.son');
+    console.log(son.offsetWidth);
+    console.log(son.style.width);
+    // son.offsetWidth = "300px";
+    son.style.width = '300px';
+  </script>
+</body>
+
+</html>
