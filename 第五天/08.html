@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      position: absolute;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    span {
+      position: absolute;
+      top: 300px;
+      left: 0;
+      display: block;
+      width: 150px;
+      height: 150px;
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <button>点击</button>
+  <div></div>
+  <span>瓦斯弹发过火</span>
+  <script>
+    var div = document.querySelector('div');
+    var span = document.querySelector('span');
+    var btn = document.querySelector('button');
+
+    function animate(obj, target) {
+      clearInterval(obj.timer);
+      obj.timer = setInterval(function () {
+        if (obj.offsetLeft > target) {
+          clearInterval(obj.timer);
+        } else {
+          obj.style.left = obj.offsetLeft + 10 + 'px';
+        }
+      }, 50)
+
+    }
+
+    animate(div, 300);
+
+    btn.addEventListener('click', function () {
+      animate(span, 500);
+    })
+  </script>
+</body>
+
+</html>

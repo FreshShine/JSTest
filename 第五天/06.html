@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .slider-bar {
+      position: absolute;
+      left: 50%;
+      top: 300px;
+      margin-left: 600px;
+      width: 45px;
+      height: 130px;
+      background-color: pink;
+    }
+
+    .w {
+      width: 1200px;
+      margin: 10px auto;
+    }
+
+    .header {
+      height: 150px;
+      background-color: purple;
+    }
+
+    .banner {
+      height: 250px;
+      background-color: skyblue;
+    }
+
+    .main {
+      height: 1000px;
+      background-color: yellowgreen;
+    }
+
+    span {
+      display: none;
+      position: absolute;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider-bar">
+    <span class="goBack">返回顶部</span>
+  </div>
+  <div class="header w">头部区域</div>
+  <div class="banner w">banner区域</div>
+  <div class="main w">主体部分</div>
+  <script>
+    //给docuMent添加滚动事件,
+    var sliderBar = document.querySelector('.slider-bar');
+    var banner = document.querySelector('.banner');
+    var bannerTop = banner.offsetTop;
+    var sliderTop = sliderBar.offsetTop - bannerTop;
+    var main = document.querySelector('.main');
+    var mainTop = main.offsetTop;
+    var goBack = document.querySelector('.goBack');
+
+    document.addEventListener('scroll', function () {
+      console.log(1);
+      console.log(window.pageYOffset);
+      if (window.pageYOffset >= bannerTop) {
+        sliderBar.style.position = 'fixed';
+        console.log(top);
+        sliderBar.style.top = sliderTop + 'px';
+        //设置固定定位的同时设置距离上面的位置
+        //距离上面的位置等于最开始距离上面的位置减去bannerTOp
+      } else {
+        sliderBar.style.position = 'absolute';
+        sliderBar.style.top = '300px';
+
+      }
+
+      if (window.pageYOffset >= mainTop) {
+        //
+        goBack.style.display = 'block';
+      } else {
+        goBack.style.display = 'none';
+      }
+    })
+  </script>
+</body>
+
+</html>
