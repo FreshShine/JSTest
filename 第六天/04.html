@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text">
+  <button class="set">设置</button>
+  <button class="get">获取</button>
+  <button class="delete">删除</button>
+  <button class="clear">清空</button>
+  <script>
+    var input = document.querySelector('input');
+    var set = document.querySelector('.set');
+    var get = document.querySelector('.get');
+    var del = document.querySelector('.delete');
+    var clear = document.querySelector('.clear');
+
+    set.addEventListener('click', function () {
+      var val = input.value;
+      localStorage.setItem('name', val);
+    })
+    get.addEventListener('click', function () {
+
+      console.log(localStorage.getItem('name'));
+    })
+    del.addEventListener('click', function () {
+
+      localStorage.removeItem('name');
+    })
+    clear.addEventListener('click', function () {
+
+      localStorage.clear();
+    })
+  </script>
+</body>
+
+</html>
