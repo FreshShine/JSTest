@@ -16,11 +16,23 @@
 
 <body>
   <script>
+    // window.addEventListener('load', function () {
+    //   var div = document.querySelector('div');
+    //   window.addEventListener('resize', function () {
+    //     if (window.innerWidth < 700) {
+    //       div.style.display = 'none';
+    //     } else {
+    //       div.style.display = 'block';
+    //     }
+    //   })
+    // })
+
     window.addEventListener('load', function () {
       var div = document.querySelector('div');
       window.addEventListener('resize', function () {
-        if (window.innerWidth < 700) {
+        if (window.innerWidth < 500) {
           div.style.display = 'none';
+
         } else {
           div.style.display = 'block';
         }

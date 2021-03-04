@@ -12,12 +12,17 @@
     <button>点击</button>
     <script>
         var btn = document.querySelector('button');
-        btn.addEventListener('click', function() {
-            // 记录浏览历史，所以可以实现后退功能
-            // location.assign('http://www.itcast.cn');
-            // 不记录浏览历史，所以不可以实现后退功能
-            // location.replace('http://www.itcast.cn');
-            location.reload(true);
+        // btn.addEventListener('click', function() {
+        //     // 记录浏览历史，所以可以实现后退功能
+        //     // location.assign('http://www.itcast.cn');
+        //     // 不记录浏览历史，所以不可以实现后退功能
+        //     // location.replace('http://www.itcast.cn');
+        //     location.reload(true);
+        // })
+
+        btn.addEventListener('click', function () {
+            // location.replace('http:www.baidu.com')
+            location.reload();
         })
     </script>
 </body>

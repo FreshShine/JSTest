@@ -10,14 +10,21 @@
 <body>
   <input type="text">
   <script>
-    //获取到搜索框，监听键盘按下事件，如果按下特定键，搜索框获取焦点
-    var input = document.querySelector('input');
-    //添加事件
-    document.addEventListener('keyup', function (e) {
-      if (e.keyCode === 65) {
+    // //获取到搜索框，监听键盘按下事件，如果按下特定键，搜索框获取焦点
+    // var input = document.querySelector('input');
+    // //添加事件
+    // document.addEventListener('keyup', function (e) {
+    //   if (e.keyCode === 65) {
+    //     input.focus();
+    //   }
+    // })
+    var input = document.querySelector('input')
+    document.onkeyup = function (e) {
+      if (e.keyCode == 65) {
         input.focus();
+
       }
-    })
+    }
   </script>
 </body>
 

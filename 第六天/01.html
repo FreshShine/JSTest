@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      position: absolute;
+      left: 0;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="btn500">开始</button>
+  <button class="btn800">开始800</button>
+  <div></div>
+  <script>
+    var btn = document.querySelector('.btn500');
+    var btn800 = document.querySelector('.btn800')
+    var div = document.querySelector('div');
+
+
+
+    function animate(obj, target, callback) {
+      clearInterval(obj.timer);
+      obj.timer = setInterval(function () {
+        // var number = Math.ceil((target - obj.offsetLeft) / 10);
+        var number = (target - obj.offsetLeft) / 10;
+        number = number > 0 ? Math.ceil(number) : Math.floor(number);
+        if (obj.offsetLeft == target) {
+          clearInterval(obj.timer)
+          console.log(callback);
+          if (callback) {
+            callback();
+          }
+        }
+        obj.style.left = obj.offsetLeft + number + 'px';
+
+      }, 50)
+    }
+
+    // animate(div, 500);
+    btn.addEventListener('click', function () {
+      animate(div, 500)
+    })
+
+    btn800.addEventListener('click', function () {
+      animate(div, 800, function () {
+        div.style.backgroundColor = 'red';
+      })
+    })
+  </script>
+</body>
+
+</html>

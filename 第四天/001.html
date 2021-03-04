@@ -20,14 +20,26 @@
     // document.addEventListener('keypress', function () {
     //   console.log('keyPress,不能识别功能键');
     // })
+    // document.onkeydown = function () {
+    //   console.log('按下了键盘');
+    // }
+    // document.onkeypress = function () {
+    //   console.log('keypress');
+    // }
+    // document.onkeyup = function () {
+    //   console.log('抬起了键盘');
+    // }
+
     document.onkeydown = function () {
-      console.log('按下了键盘');
+      console.log('onkeydown');
     }
-    document.onkeypress = function () {
-      console.log('keypress');
-    }
+
     document.onkeyup = function () {
-      console.log('抬起了键盘');
+      console.log('onkeyup');
+    }
+
+    document.onkeypress = function () {
+      console.log('onkeypress');
     }
   </script>
 

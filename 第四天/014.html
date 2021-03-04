@@ -10,21 +10,42 @@
 <body>
   手机号： <input type="number"><button>发送</button>
   <script>
-    //点击发送之后，按钮变灰，倒计时3秒，3秒过后按钮可以重新点击
-    var btn = document.querySelector('button');
-    var timer = 5;
-    btn.addEventListener('click', function () {
-      btn.disabled = true;
-      setInterval(function () {
-        if (timer == 0) {
-          btn.disabled = false;
-          btn.innerHTML = '发送'
-        } else {
-          btn.innerHTML = "倒计时" + timer;
-          timer--;
-        }
+    // //点击发送之后，按钮变灰，倒计时3秒，3秒过后按钮可以重新点击
+    // var btn = document.querySelector('button');
+    // var timer = 5;
+    // btn.addEventListener('click', function () {
+    //   btn.disabled = true;
+    //   setInterval(function () {
+    //     if (timer == 0) {
+    //       btn.disabled = false;
+    //       btn.innerHTML = '发送'
+    //     } else {
+    //       btn.innerHTML = "倒计时" + timer;
+    //       timer--;
+    //     }
 
+    //   }, 1000)
+    // })
+
+    //点击按钮之后按钮不可以点击，且文字变为倒计时，倒计时结束之后按钮可以点击，且文字变为发送
+    var btn = document.querySelector('button');
+    var input = document.querySelector('input');
+    var time = 5;
+    btn.addEventListener('click', function () {
+      //将按钮不可以点击
+      btn.disabled = true;
+      var timer = setInterval(function () {
+        if (time) {
+
+          btn.innerHTML = "倒计时" + time + '秒';
+          time--;
+        } else {
+          clearInterval(timer);
+          btn.disabled = false;
+          btn.innerHTML = '发送';
+        }
       }, 1000)
+
     })
   </script>
 </body>

@@ -11,16 +11,28 @@
   <button class="begin">开启定时器</button>
   <button class="stop">停止定时器</button>
   <script>
+    // var begin = document.querySelector('.begin');
+    // var stop = document.querySelector('.stop');
+    // var timer = null
+    // begin.addEventListener('click', function () {
+    //   timer = setTimeout(() => {
+    //     console.log('爆炸了');
+    //   }, 5000);
+    // });
+    // stop.addEventListener('click', function () {
+    //   clearTimeout(timer);
+    // })
     var begin = document.querySelector('.begin');
     var stop = document.querySelector('.stop');
     var timer = null
     begin.addEventListener('click', function () {
-      timer = setTimeout(() => {
-        console.log('爆炸了');
-      }, 5000);
+      timer = setInterval(function () {
+        console.log("好好学习，没有真爱");
+      }, 1000);
     });
+
     stop.addEventListener('click', function () {
-      clearTimeout(timer);
+      clearInterval(timer);
     })
   </script>
 </body>

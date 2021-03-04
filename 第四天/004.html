@@ -52,26 +52,44 @@
   </div>
   <script>
     //当输入框获取到焦点，并且输入框有数据，那么将div显示，并将数据赋值给div,如果失去焦点，则div隐藏
+    // var input = document.querySelector('.jd');
+    // var con = document.querySelector('.con');
+    // input.addEventListener('keyup', function () {
+    //   if (this.value == '') {
+    //     con.style.display = 'none';
+    //   } else {
+    //     con.style.display = 'block';
+    //     con.innerText = this.value;
+    //   }
+
+    // })
+
+    // input.addEventListener('focus', function () {
+    //   if (this.value) {
+    //     con.style.display = 'block';
+    //   }
+    // })
+
+    // input.addEventListener('blur', function () {
+    //   con.style.display = 'none';
+    // })
+    //当获得焦点输入框中有数据，则将放大框显示，并将数据显示到放大框中，如果失去焦点，，则隐藏放大框
     var input = document.querySelector('.jd');
     var con = document.querySelector('.con');
     input.addEventListener('keyup', function () {
-      if (this.value == '') {
-        con.style.display = 'none';
+      if (input.value) {
+        con.style.display = 'block';
+        con.innerHTML = input.value;
       } else {
-        con.style.display = 'block';
-        con.innerText = this.value;
+        con.style.display = 'none';
       }
-
-    })
-
-    input.addEventListener('focus', function () {
-      if (this.value) {
-        con.style.display = 'block';
-      }
-    })
-
+    });
     input.addEventListener('blur', function () {
+      //失去焦点，
       con.style.display = 'none';
+    });
+    input.addEventListener('focus', function () {
+      con.style.display = 'block';
     })
   </script>
 </body>
